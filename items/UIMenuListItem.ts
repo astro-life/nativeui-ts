@@ -17,7 +17,7 @@ export default class UIMenuListItem extends UIMenuItem {
 	protected _arrowLeft: Sprite;
 	protected _arrowRight: Sprite;
 
-	private _holdTime: number;
+	private _holdTime: any;
 
 	public ScrollingEnabled: boolean = true;
 
@@ -41,7 +41,7 @@ export default class UIMenuListItem extends UIMenuItem {
 		else this.Index = 0;
 	}
 
-	get SelectedItem() {
+	get SelectedItem() : any {
 		return this.Collection.length > 0 ? this.Collection[this.Index] : null;
 	}
 

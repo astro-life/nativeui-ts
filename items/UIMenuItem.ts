@@ -1,13 +1,11 @@
 import BadgeStyle from "../enums/BadgeStyle";
 import Font from "../enums/Font";
-import NativeUI from "../index";
 import ResRectangle from "../modules/ResRectangle";
 import ResText, { Alignment } from "../modules/ResText";
 import Sprite from "../modules/Sprite";
 import Color from "../utils/Color";
 import Point from "../utils/Point";
 import Size from "../utils/Size";
-import { Screen } from "../utils/Screen";
 import UUIDV4 from "../utils/UUIDV4";
 
 export default class UIMenuItem {
@@ -18,11 +16,11 @@ export default class UIMenuItem {
 	public static readonly DefaultForeColor: Color = Color.WhiteSmoke;
 	public static readonly DefaultHighlightedForeColor: Color = Color.Black;
 
-	private _event: { event: string; args: any[] };
+	private _event: { event: string; args: any[]; } | undefined;
 
 	protected _rectangle: ResRectangle;
 	protected _text: ResText;
-	protected _description: string;
+	protected _description: any;
 	protected _selectedSprite: Sprite;
 
 	protected _badgeLeft: Sprite;
@@ -37,12 +35,12 @@ export default class UIMenuItem {
 	public HighlightedForeColor: Color = UIMenuItem.DefaultHighlightedForeColor;
 
 	public Enabled: boolean;
-	public Selected: boolean;
-	public Hovered: boolean;
+	public Selected: any;
+	public Hovered: any;
 	public Data: any;
 
-	public Offset: Point;
-	public Parent: NativeUI;
+	public Offset: any;
+	public Parent: any;
 
 	public RightLabel: string = '';
 	public LeftBadge: BadgeStyle = BadgeStyle.None;
