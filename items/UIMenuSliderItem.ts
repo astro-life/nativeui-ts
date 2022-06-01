@@ -16,7 +16,7 @@ export default class UIMenuSliderItem extends UIMenuItem {
 
 	private _items: any[];
 
-	private _index: number;
+	private _index: any;
 
 	get Index() {
 		return this._index % this._items.length;
